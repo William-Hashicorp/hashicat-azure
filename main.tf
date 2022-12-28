@@ -101,7 +101,7 @@ resource "azurerm_public_ip" "catapp-pip" {
   allocation_method   = "Dynamic"
   domain_name_label   = "${var.prefix}-meow"
 }
-
+   
 resource "azurerm_virtual_machine" "catapp" {
   name                = "${var.prefix}-meow"
   location            = var.location
@@ -138,6 +138,7 @@ resource "azurerm_virtual_machine" "catapp" {
   tags = {
     Department="devops"
     Billable="true"
+    Owner="WilliamYang"
   }
 
   # Added to allow destroy to work correctly.
